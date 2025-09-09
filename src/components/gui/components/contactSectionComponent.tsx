@@ -17,10 +17,10 @@ export const ContactViewSection = ({ show, closeFunction }: { show: boolean, clo
             <IconComponent icon='close' />
         </button>
 
-        <a href="mailto:lionbytesolutions@gmail.com">
+        <a href="mailto:contact@lionbyte-solutions.com">
             <IconComponent icon='email' />
             <span>Email me</span>
-            <button className='copyButton' onClick={(e: MouseEvent) => { e.preventDefault(); CopyToClipboard('lionbytesolutions@gmail.com') }}>
+            <button className='copyButton' onClick={(e: MouseEvent) => { e.preventDefault(); CopyToClipboard('contact@lionbyte-solutions.com') }}>
                 <IconComponent icon="copy" />
             </button>
         </a>

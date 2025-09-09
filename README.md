@@ -28,7 +28,7 @@ LionBytes Solutions delivers **cutting-edge 3D websites** and **custom software 
 
 The site currently features a **3D under-construction experience**. This gives visitors a sneak peek of our capabilities while we finalize the landing page.
 
-Check it out here: [http://lionbytesolutions.com/](http://lionbytesolutions.com/)
+Check it out here: [http://lionbyte-solutions.com/](http://lionbyte-solutions.com/)
 
 ---
 
@@ -38,7 +38,7 @@ If you want to run the site locally for testing or development:
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/yourusername/lionbytes-next.git](https://github.com/yourusername/lionbytes-next.git)
+    git clone [https://github.com/cristianm-developer/lionbyte-underConstruction.git](https://github.com/cristianm-developer/lionbyte-underConstruction.git)
     cd lionbytes-next
     ```
 
@@ -77,6 +77,6 @@ You can also run LionBytes Solutions using Docker:
 
 ## Contact
 
-Have questions or want a demo of our 3D sites? Reach us via email: `lionbytesolutions@gmail.com`
+Have questions or want a demo of our 3D sites? Reach us via email: `lionbyte-solutions@gmail.com`
 
 LionBytes Solutions – Turning your ideas into interactive 3D experiences.
