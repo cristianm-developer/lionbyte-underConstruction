@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LionBytes Solutions
 
-## Getting Started
+**Website:** [http://lionbytesolutions.com/](http://lionbytesolutions.com/)
 
-First, run the development server:
+Welcome to **LionBytes Solutions**! Our site is currently **under construction**, but we are preparing an immersive **3D experience** and a full landing page showcasing our **custom 3D websites and software solutions**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+While we build the full version, feel free to visit and explore the under-construction experience. 🚀
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [About](#about)
+- [Under Construction](#under-construction)
+- [How to Use](#how-to-use)
+- [Docker Instructions](#docker-instructions)
+- [Contact](#contact)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## About
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+LionBytes Solutions delivers **cutting-edge 3D websites** and **custom software solutions** tailored to your business. Innovation, technology, and design come together to elevate your digital presence.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Under Construction
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site currently features a **3D under-construction experience**. This gives visitors a sneak peek of our capabilities while we finalize the landing page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check it out here: [http://lionbytesolutions.com/](http://lionbytesolutions.com/)
+
+---
+
+## How to Use
+
+If you want to run the site locally for testing or development:
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/yourusername/lionbytes-next.git](https://github.com/yourusername/lionbytes-next.git)
+    cd lionbytes-next
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run in development mode**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## Docker Instructions
+
+You can also run LionBytes Solutions using Docker:
+
+-   **Build the Docker image**
+    ```bash
+    docker build -t lionbytes-next .
+    ```
+
+-   **Run the container**
+    ```bash
+    docker run -p 3000:3000 lionbytes-next
+    ```
+
+-   **Open in browser**
+    Visit `http://localhost:3000` to see the site running locally.
+
+⚡ This setup uses a multi-stage build for production-ready deployment. You can use the same image on any cloud provider.
+
+---
+
+## Contact
+
+Have questions or want a demo of our 3D sites? Reach us via email: `lionbytesolutions@gmail.com`
+
+LionBytes Solutions – Turning your ideas into interactive 3D experiences.
