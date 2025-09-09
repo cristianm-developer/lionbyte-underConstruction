@@ -1,0 +1,168 @@
+.mainComponent{
+    position: fixed;
+    inset: 0;
+    margin: 2dvmax;
+    background-color: rgba(255, 255, 255, 0.064);
+    border-radius: 24px;
+    padding: 2dvmax;
+    backdrop-filter: blur(8px);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.85);
+    pointer-events: all;
+    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    
+    h2,h3{
+        flex: 1 0 100%;
+        color: white;
+    }
+
+    h2{
+        font-weight: 300;
+    }
+
+    h3{
+        padding: 12px 0;
+        font-weight: 200;
+        opacity: .8;
+    }
+
+    a{
+
+        cursor: pointer;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: solid 1px white;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        pointer-events: all;
+        text-decoration: none;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.486), -2px -2px 8px rgba(255, 255, 255, 0.086);
+        background-color: transparent;
+        z-index: 1;
+        transition: background-color ease-in-out .3s, border-color ease-in-out .3s;
+        
+        span{
+            color: white;
+        }
+
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgb(97, 192, 255);
+        }
+    }
+    :global(.buttonClose){
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        border: unset;
+        background-color: unset;
+        font-size: 1.4em;
+        opacity: .6;
+        cursor: pointer;
+        transition: opacity ease-in-out .3s ;
+
+        i{
+            pointer-events: none;
+        }
+
+        &:hover{
+            opacity: 1;
+
+        }
+    }
+
+    :global(.copyButton){
+        background-color: rgba(255, 255, 255, 0.082);
+        border: unset;
+        font-size: .8em;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 50%;
+        border: solid 1px white;
+        width: 2.4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.11);
+        transition: scale ease-in-out .3s;
+
+        &:hover{
+            scale: 1.1;
+        }
+    }
+
+    @starting-style{
+        opacity: 0;
+        transform: scale(3);
+    }
+
+    &:global(.show){
+        animation: fadeScaleIn 0.6s ease forwards;
+        pointer-events: all;
+
+        a{
+            animation: unset;
+            transform: translateY(40px);
+            opacity: 0;
+            animation: fadeInFromBottom 0.4s ease-in-out 0.3s forwards;
+        }
+    
+    }
+
+    &:not(:global(.show)){
+        animation: fadeScaleOut 0.6s ease forwards;
+        pointer-events: none;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        mask: linear-gradient(black), linear-gradient(black) content-box;
+        mask-composite: exclude;
+        border-radius: inherit;
+        background: linear-gradient(150deg, rgba(255, 255, 255, 0.082), transparent 90%);
+    }
+}
+
+@keyframes fadeScaleIn {
+    0%{
+        opacity: 0;
+        transform: scale(3);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeScaleOut {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
+    
+}
+
+@keyframes fadeInFromBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}

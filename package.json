@@ -9,17 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@babylonjs/core": "^8.26.0",
+    "@babylonjs/gui": "^8.26.0",
+    "@babylonjs/inspector": "^8.26.0",
+    "@babylonjs/loaders": "^8.26.0",
+    "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.2"
+    "sass": "^1.92.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }

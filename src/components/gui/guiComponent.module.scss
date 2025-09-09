@@ -1,0 +1,62 @@
+
+.mainComponent{
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    inset: 0;
+    width: 100dvw;
+    height: 100dvh;
+
+    pointer-events: none;
+
+    &:has(:global(.show)){
+        pointer-events: all;
+        
+    }
+
+    :global(.buttons){
+        position: relative;
+       
+
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: calc(-2vmax - 5px);
+            right: -2vmax;            
+            height: 250%;
+            width: 350%;
+            opacity: 0;
+            z-index: -1;
+            mask: radial-gradient(ellipse 130% 130% at bottom right, black 30%, transparent 90%);
+            backdrop-filter: blur(16px);
+            transition: opacity 0.3s ease;
+        }
+
+        &:has(button:hover)::before{
+            opacity: 1;
+        }
+
+        button{
+            background-color: unset;
+            pointer-events: all;
+            border: unset;
+            font-size: 2em;
+            font-weight: 100;
+            color: white;
+            padding: 1em;
+            opacity: .6;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+
+            &:hover{
+                opacity: 1;
+            }
+            
+        }
+    }
+
+    
+}

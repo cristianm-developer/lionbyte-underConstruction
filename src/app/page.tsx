@@ -1,95 +1,38 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+
+import { BabylonCanvas } from "@/components/babylonCanvas/babylonCanvas";
+import styles from "./page.module.scss";
+import { LightsComponent } from "@/components/lightsComponent/lightsComponent";
+import { LogoModel } from "@/components/sceneManager/models/logo/logoModel";
+import { SceneManager } from "@/components/sceneManager/sceneManager";
+import { CanvasContextProvider } from "@/context/canvasContext/canvasContext";
+import { FloorModel } from "@/components/sceneManager/models/floor/floorModel";
+import { MouseComponent } from "@/components/mouseComponent/mouseComponent";
+import { OptimizerComponent } from "@/components/optimizer/optimizerComponent";
+import { WarningLetterModel } from "@/components/sceneManager/models/warningLetter/warningLetterModel";
+import { Vector3 } from "@babylonjs/core";
+import { LoaderComponent } from "@/components/loader/loaderComponent";
+import { GuiComponent } from "@/components/gui/guiComponent";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  return <main className={styles.mainComponent}>
+    <LoaderComponent></LoaderComponent>
+    <CanvasContextProvider>
+      <BabylonCanvas initConfig={{showDebug: false, attachCameraControl: false}}>
+        <OptimizerComponent></OptimizerComponent>
+        <LightsComponent></LightsComponent>
+        <SceneManager >
+          <LogoModel></LogoModel>
+          <WarningLetterModel position={new Vector3(0, -9, 2)} rotation={new Vector3(0, 0, 0)} scale={new Vector3(2, 2, 2)}></WarningLetterModel>
+          <FloorModel></FloorModel>
+        </SceneManager>
+        <MouseComponent lightConfig={{ intensity: 2 }} pushConfig={{ force: -4, decay: 12 }}></MouseComponent>
+      </BabylonCanvas>
+     </CanvasContextProvider>
+     <GuiComponent></GuiComponent>
+  </main>;
+ 
 }

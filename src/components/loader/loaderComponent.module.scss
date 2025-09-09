@@ -1,0 +1,62 @@
+.mainComponent{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #25252534, #000000 80%);
+    transition: opacity 1s ease-in-out, display 1s ease-in-out allow-discrete;
+    
+    @starting-style{
+        opacity: 0;
+    }
+    &::global(.show) {
+        animation: fadeIn 0.4s ease-in-out forwards;
+    }
+    
+        
+    &:not(:global(.show)){
+        opacity: 0;
+        display: none;
+    }
+
+    
+    i{
+        opacity: 0.75;
+        translate: -1dvw -4dvh;
+        background-color: white;
+        mask: url('/logo.svg') no-repeat center;
+        width: min(21dvmax, 220px);
+        aspect-ratio: 1/1;
+        translate: 0 -20px;
+        animation: fadeInFromTop 0.8s ease-in-out forwards;
+        
+        @starting-style{
+            opacity: 0;
+            translate: 0 -20px;
+        }
+    }
+
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+@keyframes fadeInFromTop {
+    0% { 
+        translate: 0 -20px;
+        opacity: 0; 
+    }
+    100% { 
+        translate: 0 0;
+        opacity: 1; 
+    }
+    
+}
+
+
