@@ -15,6 +15,7 @@ export function useInitCanvas(canvasEl: RefObject<HTMLCanvasElement | null>, ini
         const engine = new Engine(canvasEl.current!, true);
         engine.loadingScreen = new LoaderComponentClass();
         canvasContext.setEngine(engine);
+        engine.displayLoadingUI();
 
         return engine;
     }

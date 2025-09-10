@@ -17,3 +17,8 @@ body{
 #inspector-host{
   position: absolute !important;
 }
+
+button, input, a{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}

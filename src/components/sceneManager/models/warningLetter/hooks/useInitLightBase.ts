@@ -9,7 +9,7 @@ export function useInitLightBase(props: WarningLetterModelProps) {
     const {position, rotation, scale} = props;
     const init = () => {
         mounted.current = true;
-        const light = new RectAreaLight("warningLightBase", new Vector3(0, 0, 0), 5, 3, canvasContext.scene!);
+        const light = new RectAreaLight("warningLightBase", new Vector3(0, 0, 0), 12, 4, canvasContext.scene!);
         light.intensity = 0.2;
         light.diffuse = new Color3(1, 0, 0);
         light.specular = new Color3((219/255), (214/255), (28/255));

@@ -3,4 +3,14 @@
         width: 100dvw;
         height: 100dvh;        
     }
+    opacity: 0;
+    transition: opacity ease-in-out 1s ;
+}
+
+body:global(.loading) .mainComponent{
+    opacity: 0;
+}
+
+body:global(.ready) .mainComponent{
+    opacity: 1;
 }

@@ -3,14 +3,17 @@ import { MouseEvent } from 'react';
 import style from './contactSectionComponent.module.scss';
 import { IconComponent } from '@/components/icon/iconComponent';
 
-export const ContactViewSection = ({ show, closeFunction }: { show: boolean, closeFunction: (evt: MouseEvent) => void }) => {
+export const ContactViewSection = ({ show, closeFunction }: { show?: boolean, closeFunction: (evt: MouseEvent) => void }) => {
+
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
     const CopyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text);
-        alert('Copied');
+        if(!isMobile)
+            alert('Copied');
     }
 
-    return <div className={`contactSection ${style.mainComponent} ${show ? 'show' : ''}`} >
+    return <div className={`contactSection ${style.mainComponent} ${show == undefined ? '' : show ? 'show' : 'hide'}`} >
         <h2>Contact me</h2>
         <h3>Contact me now to request an early quotation and get incredible discounts when closing contracts during our pre-launch period!</h3>
         <button className="buttonClose" onClick={(evt) => closeFunction(evt)}>

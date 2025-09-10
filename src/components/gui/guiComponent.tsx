@@ -5,7 +5,7 @@ import { ContactViewSection } from './components/contactSectionComponent';
 
 export const GuiComponent = () => {
 
-    const [showContactView, setShowContactView] = useState(false);
+    const [showContactView, setShowContactView] = useState<boolean|undefined>(undefined);
 
     const handleOutsideClick = (evt: MouseEvent) => {
         if(evt.target !== evt.currentTarget) return;

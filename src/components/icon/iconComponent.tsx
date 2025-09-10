@@ -1,6 +1,6 @@
 import style from './iconComponent.module.scss';
 
-export type IconName = 'linkedin' | 'github' | 'email' | 'whatsapp' | 'copy' | 'close';
+export type IconName = 'linkedin' | 'github' | 'email' | 'whatsapp' | 'copy' | 'close' | 'logo';
 
 
 export const IconComponent = ({icon}: {icon: IconName}) => {

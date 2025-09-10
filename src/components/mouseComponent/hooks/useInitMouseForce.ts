@@ -9,7 +9,7 @@ export function useInitMouseForce({ force = 10, decay = 20 }: { force?: number; 
     const cubes = useRef<Mesh[]>([]);
     
     const lastCall = useRef<number>(0);
-    const throttleDelay = 28; 
+    const throttleDelay = 24; 
     const throttledHandler = () => {
         const now = performance.now();
         if (now - lastCall.current < throttleDelay) {
@@ -66,12 +66,12 @@ export function useInitMouseForce({ force = 10, decay = 20 }: { force?: number; 
 
                 let factor = Math.min(1, Math.max(0, 1 - distance / decay));
                 
-                const distanceCenter = Vector3.Distance(Vector3.Zero(), pickPos2d);
-                const centerSize = 24;
+                const distanceCenter = Vector3.Distance(Vector3.Zero().add(new Vector3(0, 4, 0)), pickPos2d);
+                const centerSize = 10;
                 const factorCenter = Math.max(0, 1 - distanceCenter / centerSize);
 
                 const distanceCenterBottom = Vector3.Distance(new Vector3(0, -12, 0), pickPos2d);
-                const centerBottomSize = 28;
+                const centerBottomSize = 20;
                 const factorCenterBottom = Math.max(0, 1 - distanceCenterBottom / centerBottomSize);
 
                 factor = Math.max(0, factor - factorCenter);
@@ -80,6 +80,7 @@ export function useInitMouseForce({ force = 10, decay = 20 }: { force?: number; 
                 const targetZ = baseZ.current + (factor * force);
             
                 cube.position.z = targetZ ;
+                cube.computeWorldMatrix(true);
               
             });
         

@@ -1,3 +1,11 @@
+body:global(.loading) .mainComponent{
+    opacity: 1;
+
+    i{
+        opacity: 1;
+    }
+}
+
 .mainComponent{
     width: 100vw;
     height: 100vh;
@@ -7,36 +15,20 @@
     position: fixed;
     inset: 0;
     background: radial-gradient(circle at center, #25252534, #000000 80%);
-    transition: opacity 1s ease-in-out, display 1s ease-in-out allow-discrete;
-    
-    @starting-style{
-        opacity: 0;
-    }
-    &::global(.show) {
-        animation: fadeIn 0.4s ease-in-out forwards;
-    }
-    
-        
-    &:not(:global(.show)){
-        opacity: 0;
-        display: none;
-    }
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    opacity: 0;    
 
     
     i{
-        opacity: 0.75;
-        translate: -1dvw -4dvh;
+        opacity: 0;        
         background-color: white;
         mask: url('/logo.svg') no-repeat center;
         width: min(21dvmax, 220px);
-        aspect-ratio: 1/1;
         translate: 0 -20px;
-        animation: fadeInFromTop 0.8s ease-in-out forwards;
-        
-        @starting-style{
-            opacity: 0;
-            translate: 0 -20px;
-        }
+        font-size: 6em;
+        transition: opacity ease-in-out 1s;
+        aspect-ratio: 1/1;                        
     }
 
 }
@@ -49,13 +41,17 @@
 
 @keyframes fadeInFromTop {
     0% { 
-        translate: 0 -20px;
-        opacity: 0; 
+        
+  
     }
-    100% { 
-        translate: 0 0;
-        opacity: 1; 
+    50% { 
+        
+
     }
+    100%{
+
+    }
+
     
 }
 
